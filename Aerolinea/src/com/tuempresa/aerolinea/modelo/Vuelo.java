@@ -16,11 +16,7 @@ public class Vuelo extends Identificable {
 	@Column(length=4)
 	int anyo;
     
-    @Column(length=32)
-    String origen;
     
-    @Column(length=32)
-    String destino;
     
     @Required
     @DefaultValueCalculator(CurrentLocalDateCalculator.class)
@@ -30,8 +26,13 @@ public class Vuelo extends Identificable {
     @Column(length=6)
     private String startTime;
     
+    @ManyToOne
+    @DescriptionsList
+    CiudadOrigen ciudadOrigen;
     
-    
+    @ManyToOne
+    @DescriptionsList
+    CiudadDestino ciudadDestino;
     
 	
 
