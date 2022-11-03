@@ -20,9 +20,9 @@ public class Persona extends Identificable{
 	@Column(length=32)
 	String fotos;
 	
-	@ManyToOne(fetch=FetchType.LAZY,optional=true)
-	@DescriptionsList
-	Pais pais;
+	//@ManyToOne(fetch=FetchType.LAZY,optional=true)
+	//@DescriptionsList
+	//Pais pais;
 	
 	@Embedded
 	Direccion direccion;

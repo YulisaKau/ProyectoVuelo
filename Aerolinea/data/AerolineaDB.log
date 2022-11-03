@@ -1,2 +1,20 @@
-/*C3*/SET SCHEMA PUBLIC
+/*C4*/SET SCHEMA PUBLIC
 DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+alter table AEROLINEA.EMPLEADO add column estado_oid varchar(32)
+alter table AEROLINEA.EMPLEADO add column municipio_oid varchar(32)
+alter table AEROLINEA.PERSONA add column estado_oid varchar(32)
+alter table AEROLINEA.PERSONA add column municipio_oid varchar(32)
+alter table Aerolinea.Empleado add constraint FKrj2hr5ramtott48vgrgcmwdpq foreign key (estado_oid) references Aerolinea.Estado
+alter table Aerolinea.Empleado add constraint FK4k0ykkbb26rw380dvkpshlqb7 foreign key (municipio_oid) references Aerolinea.Municipio
+alter table Aerolinea.Persona add constraint FK71mr7wrej8heqeo6hbiwisfvt foreign key (estado_oid) references Aerolinea.Estado
+alter table Aerolinea.Persona add constraint FK2wbvr4l6apx85t866efh6siwq foreign key (municipio_oid) references Aerolinea.Municipio
+SET SCHEMA AEROLINEA
+INSERT INTO MUNICIPIO VALUES('4028838a843f335c01843f343c500000','Quintana Roo')
+COMMIT
+INSERT INTO ESTADO VALUES('4028838a843f335c01843f3461080001','Quintana Roo')
+COMMIT
+INSERT INTO PERSONA VALUES('4028838a843f335c01843f34b2810002','vd','fsdws','424x182',NULL,NULL,NULL,'csf',NULL,'4028838a843f335c01843f3461080001','4028838a843f335c01843f343c500000')
+COMMIT
+DELETE FROM PERSONA WHERE OID='4028838a843f335c01843f34b2810002'
+COMMIT
