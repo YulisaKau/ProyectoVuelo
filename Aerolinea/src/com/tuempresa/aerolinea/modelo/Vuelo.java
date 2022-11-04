@@ -10,14 +10,19 @@ import org.openxava.calculators.*;
 import lombok.*;
 
 @Entity @Getter @Setter
+
+@View(members=
+		"anyo, fecha, startTime;"+
+		"ciudadOrigen;"+
+		"ciudadDestino"
+				)
 public class Vuelo extends Identificable {
+	
 	
     @DefaultValueCalculator(CurrentYearCalculator.class)
 	@Column(length=4)
 	int anyo;
-    
-    
-    
+  
     @Required
     @DefaultValueCalculator(CurrentLocalDateCalculator.class)
     LocalDate fecha;
@@ -34,6 +39,15 @@ public class Vuelo extends Identificable {
     @DescriptionsList
     CiudadDestino ciudadDestino;
     
-	
+    /*@PrePersist
+	private void calcularNumero() {
+		Query query = XPersistence.getManager().createQuery(
+				"select max(f.numero) from "+
+			    getClass().getSimpleName()+
+				"f where f.anyo = :anyo");
+			query.setParameter("anyo", anyo);
+			Integer ultimoNumero = (Integer) query.getSingleResult();
+			this.numero = ultimoNumero == null ? 1: ultimoNumero + 1;
+	}*/
 
 }

@@ -7,6 +7,11 @@ import org.openxava.annotations.*;
 import lombok.*;
 
 @Entity @Getter @Setter
+
+@View(members=
+"nombre, apellido;"+
+"direccion;"+
+"fotos")
 public class Empleado extends Identificable{
 	
 	@Column(length=32)

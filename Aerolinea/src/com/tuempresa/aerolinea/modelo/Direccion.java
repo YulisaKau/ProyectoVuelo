@@ -7,6 +7,11 @@ import org.openxava.annotations.*;
 import lombok.*;
 
 @Embeddable @Getter @Setter
+@View(members="calle, colonia;"
+				+ "municipio;"
+				+"estado;"
+				+"direccionPais"
+		)
 public class Direccion {
 	
 	@Column(length=32)
