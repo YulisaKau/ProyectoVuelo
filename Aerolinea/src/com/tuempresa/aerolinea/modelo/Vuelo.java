@@ -16,6 +16,7 @@ import lombok.*;
 		"ciudadOrigen;"+
 		"ciudadDestino"
 				)
+@RemoveValidator(com.tuempresa.aerolinea.validadores.ValidadorBorrarPedidos.class)
 public class Vuelo extends Identificable {
 	
 	
