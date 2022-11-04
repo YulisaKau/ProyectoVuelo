@@ -1,7 +1,5 @@
 package com.tuempresa.aerolinea.modelo;
 
-import java.util.*;
-
 import javax.persistence.*;
 
 import org.openxava.annotations.*;
@@ -18,8 +16,16 @@ public class Aerolinea extends Identificable{
 	 
 	 
 	 
-	 @OneToMany(mappedBy="aerolinea")
-	 Collection<Tripulacion>tripulacion;
+	 //@OneToMany(mappedBy="aerolinea")
+	 //Collection<Tripulacion>tripulacion;
+	 
+	 @ManyToOne(fetch =FetchType.LAZY, optional = true)
+	 @DescriptionsList
+	 Pais pais;
+	 
+	 //@ManyToOne(fetch = FetchType.LAZY, optional = true)
+	 //@DescriptionsList
+	 //Tripulacion tripulacion;
  
 
 }

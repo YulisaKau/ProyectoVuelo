@@ -18,9 +18,9 @@ public class Tripulacion extends Identificable{
 	@DescriptionsList
 	Aerolinea aerolinea;
 	
-	@ManyToOne(fetch=FetchType.LAZY,optional=true)
-	@DescriptionsList
-	Pais pais;
+	//@ManyToOne(fetch=FetchType.LAZY,optional=true)
+	//@DescriptionsList
+	//Pais pais;
 	
 	
 

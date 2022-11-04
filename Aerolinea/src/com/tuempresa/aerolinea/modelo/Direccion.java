@@ -34,4 +34,8 @@ public class Direccion {
 	@DescriptionsList
 	Pais pais;*/
 	
+	@ManyToOne
+	@DescriptionsList
+	DireccionPais direccionPais;
+	
 }
